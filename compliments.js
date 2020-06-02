@@ -1,6 +1,104 @@
 Module.register("compliments", {
 
-	defaults: {},
+	defaults: {
+		updateInterval: 30000,
+		remoteFile: null,
+		fadeSpeed: 4000,
+		sleepStartTime: 2,
+		sleepEndTime: 5,
+		morningStartTime: 5,
+		morningEndTime: 11,
+		noonStartTime: 12,
+		noonEndTime: 14,
+		afternoonStartTime: 15,
+		afternoonEndTime: 18,
+		eveningStartTime: 18,
+		eveningEndTime: 23,
+		nightStartTime: 23,
+		nightEndTime: 24,
+		night2StartTime: 0,
+		night2EndTime: 2,
+		random: true,
+		mockDate: null,
+		classes: "thin large pre-line skyblue",
+		compliments: {
+			anytime : [
+				"Hello sexy thing!",
+			],
+			sleep : [
+				"Why you don't sleep?",
+			],
+			morning : [
+				"Good morning",
+			],
+			noon : [
+				"Hava a good day",
+			],
+			afternoon : [
+				"Good afternoon",
+			],
+			evening : [
+				"Good evening",
+			],
+			night : [
+				"Good night",
+			],
+			day_sunny : [
+				"Sunny",
+			],
+			day_cloudy : [
+				"Cloudy",
+			],
+			cloudy : [
+				"Cloudy",
+			],
+			cloudy_windy : [
+				"Cloudy windy",
+			],
+			showers : [
+				"Rain shower",
+			],
+			rain : [
+				"Rain",
+			],
+			thunderstorm : [
+				"Thunderstorm",
+			],
+			snow : [
+				"Snow",
+			],
+			fog : [
+				"Fog",
+			],
+			night_clear : [
+				"Clear night",
+			],
+			night_cloudy : [
+			        "Night cludy",
+			],
+			night_showers : [
+			        "Night showers",
+			],
+			night_rain : [
+			        "Raining night",
+			],
+			night_thunderstorm : [
+			        "Thunderstorm night",
+			],
+			night_snow : [
+			        "Snowing night",
+			],
+			night_alt_cloudy_windy : [
+			        "Night clouds and wind",
+			], 
+		        "25-12-...." : [
+			        "Marry Christmas",
+			],
+			"01-01-...." : [
+				"Happy New year!",
+			],
+		}
+	},
 
 	lastIndexUsed: -1,
 	currentWeatherType: "weather",
