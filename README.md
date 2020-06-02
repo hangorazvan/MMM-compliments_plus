@@ -1,5 +1,5 @@
 # compliments_plus
-More day periods options
+More day periods options for MagicMirror 2 compliments module
 
 first add in config:
 
