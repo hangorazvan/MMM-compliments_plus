@@ -197,7 +197,7 @@ Module.register("compliments", {
 			index = this.randomIndex(compliments);
 		}
 		else{
-			index = (this.lastIndexUsed >= (compliments.length-1)) ? 0: ++this.lastIndexUsed;
+			index = this.lastIndexUsed >= compliments.length - 1 ? 0: ++this.lastIndexUsed;
 		}
 		return compliments[index] || "";
 	},
