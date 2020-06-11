@@ -72,7 +72,79 @@ For use this one add in config.js and ajust config to your needs
 					anytime : [
 						"Hello sexy thing!",
 						"You looking great",
-					],							// etc
+					],
+					sleep : [
+						"Why you don't sleep?",
+					],
+					morning : [
+						"Good morning",
+					],
+					noon : [
+						"Hava a good day",
+					],
+					afternoon : [
+						"Good afternoon",
+					],
+					evening : [
+						"Good evening",
+					],
+					night : [
+						"Good night",
+					],
+					day_sunny : [
+						"Sunny",
+					],
+					day_cloudy : [
+						"Cloudy",
+					],
+					cloudy : [
+						"Cloudy",
+					],
+					cloudy_windy : [
+						"Cloudy windy",
+					],
+					showers : [
+						"Rain shower",
+					],
+					rain : [
+						"Rain",
+					],
+					thunderstorm : [
+						"Thunderstorm",
+					],
+					snow : [
+						"Snow",
+					],
+					fog : [
+						"Fog",
+					],
+					night_clear : [
+						"Clear night",
+					],
+					night_cloudy : [
+					    "Night cludy",
+					],
+					night_showers : [
+					    "Night showers",
+					],
+					night_rain : [
+					    "Raining night",
+					],
+					night_thunderstorm : [
+					    "Thunderstorm night",
+					],
+					night_snow : [
+					    "Snowing night",
+					],
+					night_alt_cloudy_windy : [
+					    "Night clouds and wind",
+					], 
+				    "25-12-...." : [
+					    "Marry Christmas",
+					],
+					"01-01-...." : [
+						"Happy New year!",
+					],
 				}
 			}
 		},
