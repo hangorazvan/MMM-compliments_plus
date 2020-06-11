@@ -1,7 +1,7 @@
 # compliments_plus
 More day and night compliments for MagicMirror 2
 
-Make some modification on default module or use this one as 3rd party, but do not replace the default, just add <i>disable: true</i>i> in config.js
+Make some modification on default module or use this one as 3rd party, but do not replace the default, just add <i>disable: true</i> in config.js
 
 First add in config.js or in compliments.js on defaults{}:
 
@@ -21,7 +21,7 @@ First add in config.js or in compliments.js on defaults{}:
 		nightStartTime: 23,
 		nightEndTime: 2,
 
-then on <i>complimentsArray function</i>i>
+then on <i>complimentsArray function</i>
 
 		if (hour >= this.config.sleepStartTime && hour < this.config.sleepEndTime && this.config.compliments.sleep) {
 			compliments = this.config.compliments.sleep.slice(0);
