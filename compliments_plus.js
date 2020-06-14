@@ -7,8 +7,6 @@ Module.register("compliments_plus", {
 		random: true,
 		mockDate: null,
 		classes: "thin large pre-line skyblue",
-		midnightStartTime: 24, // do not change
-		midnightEndTime: 0, // do not change
 
 		sleepStartTime: 2,
 		sleepEndTime: 5,
@@ -143,7 +141,7 @@ Module.register("compliments_plus", {
 		return complimentIndex;
 	},
 	complimentArray: function() {
-		var hour = moment().hour();
+		var hour = moment().hour("k");
 		var date = this.config.mockDate ? this.config.mockDate : moment().format("DD-MM-YYYY");
 		var compliments;
 
@@ -157,9 +155,9 @@ Module.register("compliments_plus", {
 			compliments = this.config.compliments.afternoon.slice(0);
 		} else	if (hour >= this.config.eveningStartTime && hour < this.config.eveningEndTime && this.config.compliments.evening) {
 			compliments = this.config.compliments.evening.slice(0);
-		} else	if (hour >= this.config.nightStartTime && hour < this.config.midnightStartTime && this.config.compliments.night) {
+		} else	if (hour >= this.config.nightStartTime && hour < 24 && this.config.compliments.night) {
 			compliments = this.config.compliments.night.slice(0);
-		} else	if (hour >= this.config.midnightEndTime && hour < this.config.nightEndTime && this.config.compliments.night) {
+		} else	if (hour >= 1 && hour < this.config.nightEndTime && this.config.compliments.night) {
 			compliments = this.config.compliments.night.slice(0);
 		}
 
