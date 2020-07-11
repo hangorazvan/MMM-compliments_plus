@@ -7,6 +7,8 @@ Module.register("compliments_plus", {
 		random: true,
 		mockDate: null,
 		classes: "thin large pre-line skyblue",
+		midnightStartTime: 24, // do not change
+		midnightEndTime: 0, // do not change
 
 		sleepStartTime: 2,
 		sleepEndTime: 5,
@@ -102,16 +104,8 @@ Module.register("compliments_plus", {
 	},
 
 	lastIndexUsed: -1,
-	currentWeatherType: "weather",
+	currentWeatherType: "currentweather",
 
-	getScripts: function() {
-	    return [];
-	},
-	
-	getStyles: function() {
-	    return [];
-	},
-	
 	start: function() {
 		Log.info("Starting module: " + this.name);
 		this.lastComplimentIndex = -1;
@@ -198,7 +192,7 @@ Module.register("compliments_plus", {
 			index = this.randomIndex(compliments);
 		}
 		else{
-			index = this.lastIndexUsed >= compliments.length - 1 ? 0: ++this.lastIndexUsed;
+			this.lastIndexUsed >= compliments.length - 1 ? 0 : ++this.lastIndexUsed;
 		}
 		return compliments[index] || "";
 	},
