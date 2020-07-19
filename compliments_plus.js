@@ -27,6 +27,7 @@ Module.register("compliments_plus", {
 			anytime : [
 				"Hello sexy thing!",
 				"You looking great",
+				moment().locale("ro").format("dddd, D MMMM"),
 			],
 			sleep : [
 				"Why you don't sleep?",
@@ -98,13 +99,17 @@ Module.register("compliments_plus", {
 			    "Marry Christmas",
 			],
 			"01-01-...." : [
-				"Happy New year!",
+				"Happy New year! + moment().format("YYYY")",
 			],
 		}
 	},
 
 	lastIndexUsed: -1,
 	currentWeatherType: "currentweather",
+
+	getScripts: function() {
+		return ["moment-with-locales.js"];
+	},
 
 	start: function() {
 		Log.info("Starting module: " + this.name);
