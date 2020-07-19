@@ -27,7 +27,7 @@ Module.register("compliments_plus", {
 			anytime : [
 				"Hello sexy thing!",
 				"You looking great",
-				moment().locale("ro").format("dddd, D MMMM"),
+				moment().locale("en").format("dddd, D MMMM"),
 			],
 			sleep : [
 				"Why you don't sleep?",
