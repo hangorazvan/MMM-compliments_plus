@@ -123,25 +123,25 @@ For use this one add in config.js and ajust config to your needs
 						"Clear night"
 					],
 					night_cloudy : [
-					    "Night cludy"
+						"Night cludy"
 					],
 					night_showers : [
-					    "Night showers"
+						"Night showers"
 					],
 					night_rain : [
-					    "Raining night"
+						"Raining night"
 					],
 					night_thunderstorm : [
-					    "Thunderstorm night"
+						"Thunderstorm night"
 					],
 					night_snow : [
-					    "Snowing night"
+						"Snowing night"
 					],
 					night_alt_cloudy_windy : [
-					    "Night clouds and wind"
+						"Night clouds and wind"
 					], 
-				    "25-12-...." : [
-					    "Marry Christmas"
+					"25-12-...." : [
+						"Marry Christmas"
 					],
 					"01-01-...." : [
 						"Happy New year! + moment().format("YYYY")"

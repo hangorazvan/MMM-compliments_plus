@@ -78,25 +78,25 @@ Module.register("compliments_plus", {
 				"Clear night"
 			],
 			night_cloudy : [
-			    "Night cludy"
+				"Night cludy"
 			],
 			night_showers : [
-			    "Night showers"
+				"Night showers"
 			],
 			night_rain : [
-			    "Raining night"
+				"Raining night"
 			],
 			night_thunderstorm : [
-			    "Thunderstorm night"
+				"Thunderstorm night"
 			],
 			night_snow : [
-			    "Snowing night"
+				"Snowing night"
 			],
 			night_alt_cloudy_windy : [
-			    "Night clouds and wind"
+				"Night clouds and wind"
 			], 
-		    "25-12-...." : [
-			    "Marry Christmas"
+			"25-12-...." : [
+				"Marry Christmas"
 			],
 			"01-01-...." : [
 				"Happy New year! + moment().format("YYYY")"
@@ -211,11 +211,11 @@ Module.register("compliments_plus", {
 //			compliment.appendChild(document.createTextNode(part));
 //			compliment.appendChild(document.createElement("BR"));
 //		}
-        for (var _i = 0; _i < parts.length; _i++) {
-            part = parts[_i];
-            compliment.appendChild(document.createTextNode(part));
-            compliment.appendChild(document.createElement("BR"));
-        }
+		for (var _i = 0; _i < parts.length; _i++) {
+			part = parts[_i];
+			compliment.appendChild(document.createTextNode(part));
+			compliment.appendChild(document.createElement("BR"));
+		}
 		compliment.lastElementChild.remove();
 		wrapper.appendChild(compliment);
 		return wrapper;
