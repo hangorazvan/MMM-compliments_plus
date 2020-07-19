@@ -27,79 +27,79 @@ Module.register("compliments_plus", {
 			anytime : [
 				"Hello sexy thing!",
 				"You looking great",
-				moment().locale("en").format("dddd, D MMMM"),
+				moment().locale("en").format("dddd, D MMMM")
 			],
 			sleep : [
-				"Why you don't sleep?",
+				"Why you don't sleep?"
 			],
 			morning : [
-				"Good morning",
+				"Good morning"
 			],
 			noon : [
-				"Hava a good day",
+				"Hava a good day"
 			],
 			afternoon : [
-				"Good afternoon",
+				"Good afternoon"
 			],
 			evening : [
-				"Good evening",
+				"Good evening"
 			],
 			night : [
-				"Good night",
+				"Good night"
 			],
 			day_sunny : [
-				"Sunny",
+				"Sunny"
 			],
 			day_cloudy : [
-				"Cloudy",
+				"Cloudy"
 			],
 			cloudy : [
-				"Cloudy",
+				"Cloudy"
 			],
 			cloudy_windy : [
-				"Cloudy windy",
+				"Cloudy windy"
 			],
 			showers : [
-				"Rain shower",
+				"Rain shower"
 			],
 			rain : [
-				"Rain",
+				"Rain"
 			],
 			thunderstorm : [
-				"Thunderstorm",
+				"Thunderstorm"
 			],
 			snow : [
-				"Snow",
+				"Snow"
 			],
 			fog : [
-				"Fog",
+				"Fog"
 			],
 			night_clear : [
-				"Clear night",
+				"Clear night"
 			],
 			night_cloudy : [
-			    "Night cludy",
+			    "Night cludy"
 			],
 			night_showers : [
-			    "Night showers",
+			    "Night showers"
 			],
 			night_rain : [
-			    "Raining night",
+			    "Raining night"
 			],
 			night_thunderstorm : [
-			    "Thunderstorm night",
+			    "Thunderstorm night"
 			],
 			night_snow : [
-			    "Snowing night",
+			    "Snowing night"
 			],
 			night_alt_cloudy_windy : [
-			    "Night clouds and wind",
+			    "Night clouds and wind"
 			], 
 		    "25-12-...." : [
-			    "Marry Christmas",
+			    "Marry Christmas"
 			],
 			"01-01-...." : [
-				"Happy New year! + moment().format("YYYY")",
+				"Happy New year! + moment().format("YYYY")"
 			],
 		}
 	},
