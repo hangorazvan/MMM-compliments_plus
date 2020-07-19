@@ -69,6 +69,7 @@ For use this one add in config.js and ajust config to your needs
 					anytime : [
 						"Hello sexy thing!",
 						"You looking great",
+						moment().locale("en").format("dddd, D MMMM")
 					],
 					sleep : [
 						"Why you don't sleep?",
@@ -140,7 +141,7 @@ For use this one add in config.js and ajust config to your needs
 						"Marry Christmas",
 					],
 					"01-01-...." : [
-						"Happy New year!",
+						"Happy New year!" + moment().format("YYYY"),
 					],
 				}
 			}
