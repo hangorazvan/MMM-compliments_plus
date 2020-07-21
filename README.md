@@ -23,6 +23,10 @@ First add in config.js or in compliments.js on defaults{}:
 
 then on <i>complimentsArray function</i>
 
+		var compliments; 
+		var hour = moment().format("k");
+		var date = this.config.mockDate ? this.config.mockDate : moment().format('DD-MM-YYYY');
+
 		if (hour >= this.config.sleepStartTime && hour < this.config.sleepEndTime && this.config.compliments.sleep) {
 			compliments = this.config.compliments.sleep.slice(0);
 		} else	if (hour >= this.config.morningStartTime && hour < this.config.morningEndTime && this.config.compliments.morning) {
@@ -33,9 +37,9 @@ then on <i>complimentsArray function</i>
 			compliments = this.config.compliments.afternoon.slice(0);
 		} else	if (hour >= this.config.eveningStartTime && hour < this.config.eveningEndTime && this.config.compliments.evening) {
 			compliments = this.config.compliments.evening.slice(0);
-		} else	if (hour >= this.config.nightStartTime && hour < this.config.midnightStartTime && this.config.compliments.night) {
+		} else	if (hour >= this.config.nightStartTime && hour < 24 && this.config.compliments.night) {
 			compliments = this.config.compliments.night.slice(0);
-		} else	if (hour >= this.config.midnightEndTime && hour < this.config.nightEndTime && this.config.compliments.night) {
+		} else	if (hour >= 1 && hour < this.config.nightEndTime && this.config.compliments.night) {
 			compliments = this.config.compliments.night.slice(0);
 		}
 
