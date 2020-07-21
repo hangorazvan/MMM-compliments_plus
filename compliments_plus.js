@@ -140,9 +140,8 @@ Module.register("compliments_plus", {
 		return complimentIndex;
 	},
 	complimentArray: function() {
-		var hour = moment().hour("k");
-		var date = this.config.mockDate ? this.config.mockDate : moment().format("DD-MM-YYYY");
-		var compliments;
+		var compliments; var hour = moment().format("k");
+		var date = this.config.mockDate ? this.config.mockDate : moment().format('DD-MM-YYYY');
 
 		if (hour >= this.config.sleepStartTime && hour < this.config.sleepEndTime && this.config.compliments.sleep) {
 			compliments = this.config.compliments.sleep.slice(0);
@@ -207,15 +206,12 @@ Module.register("compliments_plus", {
 		var complimentText = this.randomCompliment();
 		var parts = complimentText.split("\n");
 		var compliment = document.createElement("span");
-//		for (part of parts){
-//			compliment.appendChild(document.createTextNode(part));
-//			compliment.appendChild(document.createElement("BR"));
-//		}
-		for (var _i = 0; _i < parts.length; _i++) {
-			part = parts[_i];
-			compliment.appendChild(document.createTextNode(part));
-			compliment.appendChild(document.createElement("BR"));
-		}
+
+        for (var _i = 0; _i < parts.length; _i++) {
+            part = parts[_i];
+            compliment.appendChild(document.createTextNode(part));
+            compliment.appendChild(document.createElement("BR"));
+        }
 		compliment.lastElementChild.remove();
 		wrapper.appendChild(compliment);
 		return wrapper;
