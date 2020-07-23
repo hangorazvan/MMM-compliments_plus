@@ -77,6 +77,7 @@ For use this one add in config.js and ajust config to your needs
 						"Hello sexy thing!",
 						"You looking great",
 						function(){return moment().locale("en").format("dddd, D MMMM")}
+						// https://forum.magicmirror.builders/topic/13332/reloading-config-defaults-or-module
 					],
 					sleep : [
 						"Why you don't sleep?"
