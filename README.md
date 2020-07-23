@@ -71,12 +71,11 @@ For use this one add in config.js and ajust config to your needs
 				eveningEndTime: 23,
 				nightStartTime: 23,
 				nightEndTime: 2,
+
 				compliments: {
 					anytime : [
 						"Hello sexy thing!",
-						"You looking great",
-						function(){return moment().locale("en").format("dddd, D MMMM")}
-						// https://forum.magicmirror.builders/topic/13332/reloading-config-defaults-or-module
+						"You looking great"
 					],
 					sleep : [
 						"Why you don't sleep?"
@@ -150,6 +149,9 @@ For use this one add in config.js and ajust config to your needs
 					"01-01-...." : [
 						"Happy New year! + moment().format("YYYY")"
 					],
+					"..-..-....": [
+						function() {return moment().locale("en").format("dddd, D MMMM")}
+						// https://forum.magicmirror.builders/topic/13332/reloading-config-defaults-or-module
+					],
 				}
-			}
-		},
+			},
