@@ -76,7 +76,7 @@ For use this one add in config.js and ajust config to your needs
 					anytime : [
 						"Hello sexy thing!",
 						"You looking great",
-						moment().locale("en").format("dddd, D MMMM")
+						function(){return moment().locale("en").format("dddd, D MMMM")}
 					],
 					sleep : [
 						"Why you don't sleep?"
