@@ -26,9 +26,7 @@ Module.register("compliments_plus", {
 		compliments: {
 			anytime : [
 				"Hello sexy thing!",
-				"You looking great",
-				function(){return moment().locale("en").format("dddd, D MMMM")}
-				// https://forum.magicmirror.builders/topic/13332/reloading-config-defaults-or-module
+				"You looking great"
 			],
 			sleep : [
 				"Why you don't sleep?"
@@ -102,6 +100,10 @@ Module.register("compliments_plus", {
 			"01-01-...." : [
 				"Happy New year! + moment().format("YYYY")"
 			],
+			"..-..-....": [
+				function() {return moment().locale("en").format("dddd, D MMMM")}
+				// https://forum.magicmirror.builders/topic/13332/reloading-config-defaults-or-module
+			],
 		}
 	},
 
@@ -142,7 +144,7 @@ Module.register("compliments_plus", {
 	},
 	complimentArray: function() {
 		var compliments; var hour = moment().format("k");
-		var date = this.config.mockDate ? this.config.mockDate : moment().format('DD-MM-YYYY');
+		var date = this.config.mockDate ? this.config.mockDate : moment().format("DD-MM-YYYY");
 
 		if (hour >= this.config.sleepStartTime && hour < this.config.sleepEndTime && this.config.compliments.sleep) {
 			compliments = this.config.compliments.sleep.slice(0);
@@ -170,7 +172,7 @@ Module.register("compliments_plus", {
 
 		compliments.push.apply(compliments, this.config.compliments.anytime);
 
-		for (entry in this.config.compliments) {
+		for (var entry in this.config.compliments) {
 			if (new RegExp(entry).test(date)) {
 				compliments.push.apply(compliments, this.config.compliments[entry]);
 			}
@@ -199,10 +201,9 @@ Module.register("compliments_plus", {
 		else{
 			this.lastIndexUsed >= compliments.length - 1 ? 0 : ++this.lastIndexUsed;
 		}
-//		return compliments[index] || "";
 
 		var f = compliments[index];
-		if ( typeof f == "function") f= f();
+		if (typeof f == "function") f = f().replace("arie", ".").replace("brie", "."); // replace for romanian only
 		return f || "";
 	},
 	getDom: function() {
@@ -212,11 +213,11 @@ Module.register("compliments_plus", {
 		var parts = complimentText.split("\n");
 		var compliment = document.createElement("span");
 
-        for (var i = 0; i < parts.length; i++) {                        // keep ios9 compatibility
-            part = parts[i];
-            compliment.appendChild(document.createTextNode(part));
-            compliment.appendChild(document.createElement("BR"));
-        }
+		for (var i = 0; i < parts.length; i++) {                        // keep ios9 compatibility
+			part = parts[i];
+			compliment.appendChild(document.createTextNode(part));
+			compliment.appendChild(document.createElement("BR"));
+		}
 		compliment.lastElementChild.remove();
 		wrapper.appendChild(compliment);
 		return wrapper;
