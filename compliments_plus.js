@@ -27,7 +27,7 @@ Module.register("compliments_plus", {
 			anytime : [
 				"Hello sexy thing!",
 				"You looking great",
-				moment().locale("en").format("dddd, D MMMM")
+				function(){return moment().locale("en").format("dddd, D MMMM")}
 			],
 			sleep : [
 				"Why you don't sleep?"
@@ -198,17 +198,21 @@ Module.register("compliments_plus", {
 		else{
 			this.lastIndexUsed >= compliments.length - 1 ? 0 : ++this.lastIndexUsed;
 		}
-		return compliments[index] || "";
+//		return compliments[index] || "";
+
+		var f = compliments[index];
+		if ( typeof f == "function") f= f();
+		return f || "";
 	},
 	getDom: function() {
 		var wrapper = document.createElement("div");
-		wrapper.className = this.config.classes;
+		wrapper.className = this.config.classes ? this.config.classes : "thin xlarge bright pre-line";
 		var complimentText = this.randomCompliment();
 		var parts = complimentText.split("\n");
 		var compliment = document.createElement("span");
 
-        for (var _i = 0; _i < parts.length; _i++) {
-            part = parts[_i];
+        for (var i = 0; i < parts.length; i++) {                        // keep ios9 compatibility
+            part = parts[i];
             compliment.appendChild(document.createTextNode(part));
             compliment.appendChild(document.createElement("BR"));
         }
