@@ -98,7 +98,7 @@ Module.register("compliments_plus", {
 				"Marry Christmas"
 			],
 			"01-01-...." : [
-				"Happy New year! + moment().format("YYYY")"
+				function() {return "Happy New Year! " + moment().format("YYYY")}
 			],
 			"..-..-....": [
 				function() {return moment().locale("en").format("dddd, D MMMM")}
