@@ -23,8 +23,7 @@ First add in config.js or in compliments.js on defaults{}:
 
 then on <i>complimentsArray function</i>
 
-		var compliments; 
-		var hour = moment().format("k");
+		var compliments; var hour = moment().format("k");
 		var date = this.config.mockDate ? this.config.mockDate : moment().format('DD-MM-YYYY');
 
 		if (hour >= this.config.sleepStartTime && hour < this.config.sleepEndTime && this.config.compliments.sleep) {
