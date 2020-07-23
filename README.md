@@ -147,7 +147,7 @@ For use this one add in config.js and ajust config to your needs
 						"Marry Christmas"
 					],
 					"01-01-...." : [
-						"Happy New year! + moment().format("YYYY")"
+						function() {return "Happy New Year! " + moment().format("YYYY")}
 					],
 					"..-..-....": [
 						function() {return moment().locale("en").format("dddd, D MMMM")}
