@@ -102,6 +102,7 @@ Module.register("compliments_plus", {
 					],
 					"..-..-....": [
 						function() {return moment().locale(config.language).format("dddd, D MMMM")}
+						// https://forum.magicmirror.builders/topic/13332/reloading-config-defaults-or-module
 					],
 		}
 	},
