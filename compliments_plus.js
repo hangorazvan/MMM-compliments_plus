@@ -98,10 +98,10 @@ Module.register("compliments_plus", {
 						"Marry Christmas!"
 					],
 					"01-01-....": [
-						function() {return "Happy New Year! " + moment().format("YYYY")}
+						function() {return "Happy New Year! " + moment().format("YYYY");}
 					],
 					"..-..-....": [
-						function() {return moment().locale(config.language).format("dddd, D MMMM")}
+						function() {return moment().locale(config.language).format("dddd, D MMMM");}
 						// https://forum.magicmirror.builders/topic/13332/reloading-config-defaults-or-module
 					],
 		}
@@ -163,7 +163,7 @@ Module.register("compliments_plus", {
 		}
 
 		if (typeof compliments === "undefined") {
-			compliments = new Array();
+			compliments = [];
 		}
 
 		if (this.currentWeatherType in this.config.compliments) {
