@@ -3,11 +3,18 @@ More day and night compliments for MagicMirror 2
 
 Do not make modification and do not replace the default, just add <i>disable: true</i> in config.js and use this one as 3rd party,
 
+	{
+		module: "compliments",
+		position: "lower_third",
+		disable: true
+	}
+
 For use this one add in config.js and ajust config to your needs
 
 	{
 		module: "compliments_plus",
 		position: "lower_third",
+		disable: false,
 		config: {
 			updateInterval: 30000,
 			remoteFile: null,
