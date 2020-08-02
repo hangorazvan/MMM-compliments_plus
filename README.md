@@ -5,9 +5,6 @@ Make some modification on default module or use this one as 3rd party, but do no
 
 First add in config.js or in compliments.js on defaults{}:
 
-		midnightStartTime: 24, // do not change
-		midnightEndTime: 0, // do not change
-
 		sleepStartTime: 2,
 		sleepEndTime: 5,
 		morningStartTime: 5,
@@ -56,8 +53,6 @@ For use this one add in config.js and ajust config to your needs
 				random: true,
 				mockDate: null,
 				classes: "thin large pre-line skyblue",
-				midnightStartTime: 24, // do not change
-				midnightEndTime: 0, // do not change
 
 				sleepStartTime: 2,
 				sleepEndTime: 5,
