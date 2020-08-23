@@ -196,8 +196,10 @@ Module.register("compliments_plus", {
 			this.lastIndexUsed >= compliments.length - 1 ? 0 : ++this.lastIndexUsed;
 		}
 
+		// https://forum.magicmirror.builders/topic/13332/reloading-config-defaults-or-module
+		// this function calculate a value and get the string to display
 		var f = compliments[index];
-		if (typeof f == "function") f = f();
+		if (typeof f == "function") f = f().replace("arie", ".").replace("brie", ".");
 		return f || "";
 	},
 	getDom: function() {
