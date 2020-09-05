@@ -199,7 +199,7 @@ Module.register("compliments_plus", {
 		// https://forum.magicmirror.builders/topic/13332/reloading-config-defaults-or-module
 		// this function calculate a value and get the string to display
 		var f = compliments[index];
-		if (typeof f == "function") f = f().replace("arie", ".").replace("brie", ".");
+		if (typeof f == "function") f = f().replace(/uarie|ombrie|embrie/g, ".");
 		return f || "";
 	},
 	getDom: function() {
