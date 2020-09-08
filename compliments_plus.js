@@ -6,7 +6,7 @@ Module.register("compliments_plus", {
 		fadeSpeed: 4000,
 		random: true,
 		mockDate: null,
-		classes: "thin large pre-line skyblue",
+		classes: "thin large pre-line",
 
 		sleepStartTime: 2,
 		sleepEndTime: 5,
