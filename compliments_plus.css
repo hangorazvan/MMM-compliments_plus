@@ -1,0 +1,16 @@
+.compliments_plus .large {
+	font-size: 6.4rem;
+	line-height: 6.8rem;
+	background: -webkit-linear-gradient(lightblue, lightskyblue);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.compliments_plus .thin {
+	font-family: Roboto, sans-serif;
+	font-weight: 100;
+}
+
+.compliments_plus .pre-line {
+	white-space: pre-line;
+}
