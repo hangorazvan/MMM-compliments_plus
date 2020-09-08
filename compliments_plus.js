@@ -108,6 +108,10 @@ Module.register("compliments_plus", {
 	lastIndexUsed: -1,
 	currentWeatherType: "weather",
 	
+	getStyles: function () {
+		return ["compliments_plus.css"];
+	},
+	
 	start: function() {
 		Log.info("Starting module: " + this.name);
 		this.lastComplimentIndex = -1;
