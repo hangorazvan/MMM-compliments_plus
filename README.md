@@ -23,6 +23,8 @@ For use this one add in config.js and ajust config to your needs
 			mockDate: null,
 			classes: "thin large pre-line skyblue",
 
+	//	the beginning of the period of the day
+
 			morning: 5,
 			noon: 12,
 			afternoon: 15,
