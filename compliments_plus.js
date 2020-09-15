@@ -6,28 +6,19 @@ Module.register("compliments_plus", {
 		fadeSpeed: 4000,
 		random: true,
 		mockDate: null,
-		classes: "thin large pre-line",
+		classes: "thin large pre-line skyblue",
 
-		sleepStartTime: 2,
-		sleepEndTime: 5,
-		morningStartTime: 5,
-		morningEndTime: 11,
-		noonStartTime: 12,
-		noonEndTime: 14,
-		afternoonStartTime: 15,
-		afternoonEndTime: 18,
-		eveningStartTime: 18,
-		eveningEndTime: 23,
-		nightStartTime: 23,
-		nightEndTime: 2,
+		morning: 5,
+		noon: 12,
+		afternoon: 15,
+		evening: 18,
+		night: 22,
+		midnight: 1,
 
 		compliments: {
 			anytime : [
 				"Hello sexy thing!",
 				"You looking great"
-			],
-			sleep : [
-				"Why you don't sleep?"
 			],
 			morning : [
 				"Good morning"
@@ -43,6 +34,9 @@ Module.register("compliments_plus", {
 			],
 			night : [
 				"Good night"
+			],
+			midnight : [
+				"Why you don't sleep?"
 			],
 			day_sunny : [
 				"Sunny"
@@ -108,6 +102,10 @@ Module.register("compliments_plus", {
 	lastIndexUsed: -1,
 	currentWeatherType: "weather",
 	
+	getScripts: function() {
+		return ["moment.js", "moment-timezone.js"];
+	},
+
 	getStyles: function () {
 		return ["compliments_plus.css"];
 	},
@@ -144,20 +142,18 @@ Module.register("compliments_plus", {
 		var compliments; var hour = moment().format("k");
 		var date = this.config.mockDate ? this.config.mockDate : moment().format("DD-MM-YYYY");
 
-		if (hour >= this.config.sleepStartTime && hour < this.config.sleepEndTime && this.config.compliments.sleep) {
-			compliments = this.config.compliments.sleep.slice(0);
-		} else	if (hour >= this.config.morningStartTime && hour < this.config.morningEndTime && this.config.compliments.morning) {
+		if (hour >= this.config.morning && hour < this.config.noon && this.config.compliments.morning) {
 			compliments = this.config.compliments.morning.slice(0);
-		} else	if (hour >= this.config.noonStartTime && hour < this.config.noonEndTime && this.config.compliments.noon) {
+		} else	if (hour >= this.config.noon && hour < this.config.afternoon && this.config.compliments.noon) {
 			compliments = this.config.compliments.noon.slice(0);
-		} else	if (hour >= this.config.afternoonStartTime && hour < this.config.afternoonEndTime && this.config.compliments.afternoon) {
+		} else	if (hour >= this.config.afternoon && hour < this.config.evening && this.config.compliments.afternoon) {
 			compliments = this.config.compliments.afternoon.slice(0);
-		} else	if (hour >= this.config.eveningStartTime && hour < this.config.eveningEndTime && this.config.compliments.evening) {
+		} else	if (hour >= this.config.evening && hour < this.config.night && this.config.compliments.evening) {
 			compliments = this.config.compliments.evening.slice(0);
-		} else	if (hour >= this.config.nightStartTime && hour < 24 && this.config.compliments.night) {
+		} else	if (hour >= this.config.night && hour < this.config.midnight && this.config.compliments.night) {
 			compliments = this.config.compliments.night.slice(0);
-		} else	if (hour >= 1 && hour < this.config.nightEndTime && this.config.compliments.night) {
-			compliments = this.config.compliments.night.slice(0);
+		} else if (hour >= this.config.midnight && hour < this.config.morning && this.config.compliments.midnight) {
+			compliments = this.config.compliments.midnight.slice(0);
 		}
 
 		if (typeof compliments === "undefined") {
@@ -203,7 +199,7 @@ Module.register("compliments_plus", {
 		// https://forum.magicmirror.builders/topic/13332/reloading-config-defaults-or-module
 		// this function calculate a value and get the string to display
 		var f = compliments[index];
-		if (typeof f == "function") f = f();
+		if (typeof f == "function") f = f(); // .replace(/uarie|ombrie|embrie/g, ".")
 		return f || "";
 	},
 	getDom: function() {

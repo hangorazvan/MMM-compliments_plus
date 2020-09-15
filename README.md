@@ -21,28 +21,19 @@ For use this one add in config.js and ajust config to your needs
 			fadeSpeed: 4000,
 			random: true,
 			mockDate: null,
-			classes: "thin large pre-line",
+			classes: "thin large pre-line skyblue",
 
-			sleepStartTime: 2,
-			sleepEndTime: 5,
-			morningStartTime: 5,
-			morningEndTime: 11,
-			noonStartTime: 12,
-			noonEndTime: 14,
-			afternoonStartTime: 15,
-			afternoonEndTime: 18,
-			eveningStartTime: 18,
-			eveningEndTime: 23,
-			nightStartTime: 23,
-			nightEndTime: 2,
+			morning: 5,
+			noon: 12,
+			afternoon: 15,
+			evening: 18,
+			night: 22,
+			midnight: 1,
 
 			compliments: {
 				anytime : [
 					"Hello sexy thing!",
 					"You looking great"
-				],
-				sleep : [
-					"Why you don't sleep?"
 				],
 				morning : [
 					"Good morning"
@@ -58,6 +49,9 @@ For use this one add in config.js and ajust config to your needs
 				],
 				night : [
 					"Good night"
+				],
+				midnight : [
+					"Why you don't sleep?"
 				],
 				day_sunny : [
 					"Sunny"
