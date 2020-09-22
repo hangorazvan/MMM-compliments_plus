@@ -107,7 +107,7 @@ Module.register("compliments_plus", {
 	},
 
 	getStyles: function () {
-		return ["compliments_plus.css", "font-awesome.css", "weather-icons.min.css"];
+		return ["compliments_plus.css", "font-awesome.css", "weather-icons.css"];
 	},
 	
 	start: function () {
