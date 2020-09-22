@@ -53,7 +53,7 @@ For use this one add in config.js and ajust config to your needs
 					"<i class=\"fa fa-bed\"></i> Good night"
 				],
 				"midnight" : [
-					"Why you don't sleep?"
+					"<i class=\"fa fa-bed\"></i> Why you don't sleep?"
 				],
 				"day_sunny" : [
 					"<i class=\"wi wi-day-sunny\"></i> Sunny"
