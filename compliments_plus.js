@@ -6,7 +6,7 @@ Module.register("compliments_plus", {
 		fadeSpeed: 4000,
 		random: true,
 		mockDate: null,
-		classes: "thin large pre-line skyblue",
+		classes: "compliments_plus thin large pre-line",
 
 		morning: 5,
 		noon: 12,
@@ -16,81 +16,81 @@ Module.register("compliments_plus", {
 		midnight: 1,
 
 		compliments: {
-			anytime : [
-				"Hello sexy thing!",
-				"You looking great"
+			"anytime" : [
+				"<i class=\"fa fa-thumbs-up\"></i> Hello sexy thing!",
+				"<i class=\"fa fa-thumbs-up\"></i> You looking great"
 			],
-			morning : [
-				"Good morning"
+			"morning" : [
+				"<i class=\"fa fa-mug-hot\"></i> Good morning"
 			],
-			noon : [
-				"Hava a good day"
+			"noon" : [
+				"<i class=\"fa fa-thumbs-up\"></i> Hava a good day"
 			],
-			afternoon : [
-				"Good afternoon"
+			"afternoon" : [
+				"<i class=\"fa fa-thumbs-up\"></i> Good afternoon"
 			],
-			evening : [
-				"Good evening"
+			"evening" : [
+				"<i class=\"fa fa-thumbs-up\"></i> Good evening"
 			],
-			night : [
-				"Good night"
+			"night" : [
+				"<i class=\"fa fa-bed\"></i> Good night"
 			],
-			midnight : [
+			"midnight" : [
 				"Why you don't sleep?"
 			],
-			day_sunny : [
-				"Sunny"
+			"day_sunny" : [
+				"<i class=\"wi wi-day-sunny\"></i> Sunny"
 			],
-			day_cloudy : [
-				"Cloudy",
+			"day_cloudy" : [
+				"<i class=\"wi wi-day-cloudy\"></i> Cloudy",
 			],
-			cloudy : [
-				"Cloudy"
+			"cloudy" : [
+				"<i class=\"wi wi-cloudy\"></i> Cloudy"
 			],
-			cloudy_windy : [
-				"Cloudy windy"
+			"day-cloudy_windy" : [
+				"<i class=\"wi wi-day-cloudy-windy\"></i> Cloudy windy"
 			],
-			showers : [
-				"Rain shower"
+			"day-showers" : [
+				"<i class=\"wi wi-day-showers\"></i> Rain shower"
 			],
-			rain : [
-				"Raining"
+			"day-rain" : [
+				"<i class=\"wi wi-day-rain\"></i> Raining"
 			],
-			thunderstorm : [
-				"Thunderstorm"
+			"day-thunderstorm" : [
+				"<i class=\"wi wi-day-thunderstorm\"></i> Thunderstorm"
 			],
-			snow : [
-				"Snowing"
+			"day-snow" : [
+				"<i class=\"wi wi-day-snow\"></i> Snowing"
 			],
-			fog : [
-				"It's Fog"
+			"day-fog" : [
+				"<i class=\"wi wi-day-fog\"></i> It's Fog"
 			],
-			night_clear : [
-				"Clear night"
+			"night_clear" : [
+				"<i class=\"wi wi-night-clear\"></i> Clear night"
 			],
-			night_cloudy : [
-				"Night cludy"
+			"night_cloudy" : [
+				"<i class=\"wi wi-night-cloudy\"></i> Night cludy"
 			],
-			night_showers : [
-				"Night showers"
+			"night_showers" : [
+				"<i class=\"wi wi-night-showers\"></i> Night showers"
 			],
-			night_rain : [
-				"Raining night"
+			"night_rain" : [
+				"<i class=\"wi wi-night-rain\"></i> Raining night"
 			],
-			night_thunderstorm : [
-				"Thunderstorm night"
+			"night_thunderstorm" : [
+				"<i class=\"wi wi-night-thunderstorm\"></i> Thunderstorm night"
 			],
-			night_snow : [
-				"Snowing night"
+			"night_snow" : [
+				"<i class=\"wi wi-night-snow\"></i> Snowing night"
 			],
-			night_alt_cloudy_windy : [
-				"Night clouds and wind"
+			"night_alt_cloudy_windy" : [
+				"<i class=\"wi wi-night-cloudy-windy\"></i> Night clouds and wind"
 			], 
 			"25-12-...." : [
-				"Marry Christmas!"
+				"<i class=\"fa fa-snowman\"></i> Marry Christmas!"
 			],
 			"01-01-....": [
-				function() {return "Happy New Year! " + moment().format("YYYY")}
+				function() {return "<i class=\"fa fa-glass-cheers\"></i> Happy New Year! " + moment().format("YYYY")}
 			],
 			"..-..-....": [
 				function() {return moment().locale(config.language).format("dddd, D MMMM")}
@@ -100,47 +100,71 @@ Module.register("compliments_plus", {
 	},
 
 	lastIndexUsed: -1,
-	currentWeatherType: "weather",
+	currentWeatherType: "currentweather",
 	
 	getScripts: function() {
 		return ["moment.js", "moment-timezone.js"];
 	},
 
 	getStyles: function () {
-		return ["compliments_plus.css"];
+		return ["compliments_plus.css", "font-awesome.css", "weather-icons.min.css"];
 	},
 	
-	start: function() {
+	start: function () {
 		Log.info("Starting module: " + this.name);
+
 		this.lastComplimentIndex = -1;
+
 		var self = this;
 		if (this.config.remoteFile !== null) {
-			this.complimentFile(function(response) {
+			this.complimentFile(function (response) {
 				self.config.compliments = JSON.parse(response);
 				self.updateDom();
 			});
 		}
-		setInterval(function() {
+
+		// Schedule update timer.
+		setInterval(function () {
 			self.updateDom(self.config.fadeSpeed);
 		}, this.config.updateInterval);
 	},
-	randomIndex: function(compliments) {
+
+	/* randomIndex(compliments)
+	 * Generate a random index for a list of compliments.
+	 *
+	 * argument compliments Array<String> - Array with compliments.
+	 *
+	 * return Number - Random index.
+	 */
+	randomIndex: function (compliments) {
 		if (compliments.length === 1) {
 			return 0;
 		}
-		var generate = function() {
+
+		var generate = function () {
 			return Math.floor(Math.random() * compliments.length);
 		};
+
 		var complimentIndex = generate();
+
 		while (complimentIndex === this.lastComplimentIndex) {
 			complimentIndex = generate();
 		}
+
 		this.lastComplimentIndex = complimentIndex;
+
 		return complimentIndex;
 	},
-	complimentArray: function() {
-		var compliments; var hour = moment().format("k");
-		var date = this.config.mockDate ? this.config.mockDate : moment().format("DD-MM-YYYY");
+
+	/* complimentArray()
+	 * Retrieve an array of compliments for the time of the day.
+	 *
+	 * return compliments Array<String> - Array with compliments for the time of the day.
+	 */
+	complimentArray: function () {
+		var hour = moment().hour();
+		var date = this.config.mockDate ? this.config.mockDate : moment().format("DD-MM-YYYY"); // this is vice versa of origina module
+		var compliments;
 
 		if (hour >= this.config.morning && hour < this.config.noon && this.config.compliments.morning) {
 			compliments = this.config.compliments.morning.slice(0);
@@ -171,64 +195,94 @@ Module.register("compliments_plus", {
 				compliments.push.apply(compliments, this.config.compliments[entry]);
 			}
 		}
+
 		return compliments;
 	},
-	complimentFile: function(callback) {
+
+	/* complimentFile(callback)
+	 * Retrieve a file from the local filesystem
+	 */
+	complimentFile: function (callback) {
 		var xobj = new XMLHttpRequest(),
 			isRemote = this.config.remoteFile.indexOf("http://") === 0 || this.config.remoteFile.indexOf("https://") === 0,
 			path = isRemote ? this.config.remoteFile : this.file(this.config.remoteFile);
 		xobj.overrideMimeType("application/json");
 		xobj.open("GET", path, true);
-		xobj.onreadystatechange = function() {
+		xobj.onreadystatechange = function () {
 			if (xobj.readyState === 4 && xobj.status === 200) {
 				callback(xobj.responseText);
 			}
 		};
 		xobj.send(null);
 	},
-	randomCompliment: function() {
+
+	/* complimentArray()
+	 * Retrieve a random compliment.
+	 *
+	 * return compliment string - A compliment.
+	 */
+	randomCompliment: function () {
+		// get the current time of day compliments list
 		var compliments = this.complimentArray();
+		// variable for index to next message to display
 		var index = 0;
-		if(this.config.random){
+		// are we randomizing
+		if (this.config.random) {
+			// yes
 			index = this.randomIndex(compliments);
-		}
-		else{
-			this.lastIndexUsed >= compliments.length - 1 ? 0 : ++this.lastIndexUsed;
+		} else {
+			// no, sequential
+			// if doing sequential, don't fall off the end
+			index = this.lastIndexUsed >= compliments.length - 1 ? 0 : ++this.lastIndexUsed;
 		}
 
+		// return compliments[index] || "";
 		// https://forum.magicmirror.builders/topic/13332/reloading-config-defaults-or-module
 		// this function calculate a value and get the string to display
 		var f = compliments[index];
-		if (typeof f == "function") f = f(); // .replace(/uarie|ombrie|embrie/g, ".")
+		if (typeof f == "function") f = f();
 		return f || "";
 	},
-	getDom: function() {
-		var wrapper = document.createElement("div");
-		wrapper.className = this.config.classes ? this.config.classes : "thin xlarge bright pre-line";
-		var complimentText = this.randomCompliment();
-		var parts = complimentText.split("\n");
-		var compliment = document.createElement("span");
 
-        for (var i = 0; i < parts.length; i++) {                        // keep ios9 compatibility
+	// Override dom generator.
+	getDom: function () {
+		var wrapper = document.createElement("div");
+		wrapper.className = this.config.classes; // ? this.config.classes : " ";
+		// get the compliment text
+		var complimentText = this.randomCompliment();
+		// split it into parts on newline text
+		var parts = complimentText.split("\n");
+		// create a span to hold it all
+		var compliment = document.createElement("span");
+		// process all the parts of the compliment text
+//		for (var part of parts) {				keep iOS 9 compatibility
+		for (var i = 0; i < parts.length; i++) {
             part = parts[i];
-            compliment.appendChild(document.createTextNode(part));
-            compliment.appendChild(document.createElement("BR"));
-        }
+			// create a text element for each part
+			compliment.appendChild(document.createTextNode(part));
+			// add a break `
+			compliment.appendChild(document.createElement("BR"));
+		}
+		// remove the last break
 		compliment.lastElementChild.remove();
+		compliment.innerHTML = complimentText; // make html tags compatible
 		wrapper.appendChild(compliment);
+
 		return wrapper;
 	},
-	setCurrentWeatherType: function(data) {
+
+	// From data currentweather set weather type
+	setCurrentWeatherType: function (data) {
 		var weatherIconTable = {
 			"01d": "day_sunny",
 			"02d": "day_cloudy",
 			"03d": "cloudy",
-			"04d": "cloudy_windy",
-			"09d": "showers",
-			"10d": "rain",
-			"11d": "thunderstorm",
-			"13d": "snow",
-			"50d": "fog",
+			"04d": "day_cloudy_windy",
+			"09d": "day_showers",
+			"10d": "day_rain",
+			"11d": "day_thunderstorm",
+			"13d": "day_snow",
+			"50d": "day_fog",
 			"01n": "night_clear",
 			"02n": "night_cloudy",
 			"03n": "night_cloudy",
@@ -241,9 +295,11 @@ Module.register("compliments_plus", {
 		};
 		this.currentWeatherType = weatherIconTable[data.weather[0].icon];
 	},
-	notificationReceived: function(notification, payload, sender) {
-		if (notification === "Weather data") {
+
+	// Override notification handler.
+	notificationReceived: function (notification, payload, sender) {
+		if (notification === "CURRENTWEATHER_DATA") {
 			this.setCurrentWeatherType(payload.data);
 		}
-	},
+	}
 });
