@@ -1,19 +1,14 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/font-awesome.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css");
 
-.compliments_plus .large {
-	font-size: 6.4rem;
-	line-height: 6.8rem;
-	background: -webkit-linear-gradient(lightblue, lightskyblue);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-.compliments_plus .thin {
-	font-family: Roboto, sans-serif;
-	font-weight: 100;
-}
-
 .compliments_plus .pre-line {
 	white-space: pre-line;
+	color: skyblue;
+}
+
+.compliments_plus .wi,
+.compliments_plus .fa {
+	font-size: 70%;
+	display: inline-block;
+	transform: translateY(-5px);
 }
