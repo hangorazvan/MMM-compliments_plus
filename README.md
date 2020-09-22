@@ -21,7 +21,7 @@ For use this one add in config.js and ajust config to your needs
 			fadeSpeed: 4000,
 			random: true,
 			mockDate: null,
-			classes: "thin large pre-line skyblue",
+			classes: "thin large pre-line",
 
 	//	the beginning of the period of the day
 
@@ -33,84 +33,84 @@ For use this one add in config.js and ajust config to your needs
 			midnight: 1,
 
 			compliments: {
-				anytime : [
-					"Hello sexy thing!",
-					"You looking great"
+				"anytime" : [
+					"<i class=\"fa fa-thumbs-up\"></i> Hello sexy thing!",
+					"<i class=\"fa fa-thumbs-up\"></i> You looking great"
 				],
-				morning : [
-					"Good morning"
+				"morning" : [
+					"<i class=\"fa fa-mug-hot\"></i> Good morning"
 				],
-				noon : [
-					"Hava a good day"
+				"noon" : [
+					"<i class=\"fa fa-thumbs-up\"></i> Hava a good day"
 				],
-				afternoon : [
-					"Good afternoon"
+				"afternoon" : [
+					"<i class=\"fa fa-thumbs-up\"></i> Good afternoon"
 				],
-				evening : [
-					"Good evening"
+				"evening" : [
+					"<i class=\"fa fa-thumbs-up\"></i> Good evening"
 				],
-				night : [
-					"Good night"
+				"night" : [
+					"<i class=\"fa fa-bed\"></i> Good night"
 				],
-				midnight : [
+				"midnight" : [
 					"Why you don't sleep?"
 				],
-				day_sunny : [
-					"Sunny"
+				"day_sunny" : [
+					"<i class=\"wi wi-day-sunny\"></i> Sunny"
 				],
-				day_cloudy : [
-					"Cloudy"
+				"day_cloudy" : [
+					"<i class=\"wi wi-day-cloudy\"></i> Cloudy",
 				],
-				cloudy : [
-					"Cloudy"
+				"cloudy" : [
+					"<i class=\"wi wi-cloudy\"></i> Cloudy"
 				],
-				cloudy_windy : [
-					"Cloudy windy"
+				"day-cloudy_windy" : [
+					"<i class=\"wi wi-day-cloudy-windy\"></i> Cloudy windy"
 				],
-				showers : [
-					"Rain shower"
+				"day-showers" : [
+					"<i class=\"wi wi-day-showers\"></i> Rain shower"
 				],
-				rain : [
-					"Rain"
+				"day-rain" : [
+					"<i class=\"wi wi-day-rain\"></i> Raining"
 				],
-				thunderstorm : [
-					"Thunderstorm"
+				"day-thunderstorm" : [
+					"<i class=\"wi wi-day-thunderstorm\"></i> Thunderstorm"
 				],
-				snow : [
-					"Snow"
+				"day-snow" : [
+					"<i class=\"wi wi-day-snow\"></i> Snowing"
 				],
-				fog : [
-					"Fog"
+				"day-fog" : [
+					"<i class=\"wi wi-day-fog\"></i> It's Fog"
 				],
-				night_clear : [
-					"Clear night"
+				"night_clear" : [
+					"<i class=\"wi wi-night-clear\"></i> Clear night"
 				],
-				night_cloudy : [
-					"Night cludy"
+				"night_cloudy" : [
+					"<i class=\"wi wi-night-cloudy\"></i> Night cludy"
 				],
-				night_showers : [
-					"Night showers"
+				"night_showers" : [
+					"<i class=\"wi wi-night-showers\"></i> Night showers"
 				],
-				night_rain : [
-					"Raining night"
+				"night_rain" : [
+					"<i class=\"wi wi-night-rain\"></i> Raining night"
 				],
-				night_thunderstorm : [
-					"Thunderstorm night"
+				"night_thunderstorm" : [
+					"<i class=\"wi wi-night-thunderstorm\"></i> Thunderstorm night"
 				],
-				night_snow : [
-					"Snowing night"
+				"night_snow" : [
+					"<i class=\"wi wi-night-snow\"></i> Snowing night"
 				],
-				night_alt_cloudy_windy : [
-					"Night clouds and wind"
+				"night_alt_cloudy_windy" : [
+					"<i class=\"wi wi-night-cloudy-windy\"></i> Night clouds and wind"
 				], 
 				"25-12-...." : [
-					"Marry Christmas"
+					"<i class=\"fa fa-snowman\"></i> Marry Christmas!"
 				],
-				"01-01-...." : [
-					function() {return "Happy New Year! " + moment().format("YYYY")}
+				"01-01-....": [
+					function() {return "<i class=\"fa fa-glass-cheers\"></i> Happy New Year! " + moment().format("YYYY")}
 				],
 				"..-..-....": [
-					function() {return moment().locale("en").format("dddd, D MMMM")}
+					function() {return moment().locale(config.language).format("dddd, D MMMM")}
 					// https://forum.magicmirror.builders/topic/13332/reloading-config-defaults-or-module
 				],
 			}
