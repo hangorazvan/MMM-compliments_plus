@@ -1,3 +1,11 @@
+/* Magic Mirror
+ *
+ * Redesigned by Răzvan Cristea
+ * for iPad 3 & HD display
+ *
+ * https://github.com/hangorazvan
+ * Creative Commons BY-NC-SA 4.0, Romania.
+ */
 Module.register("compliments_plus", {
 
 	defaults: {
@@ -100,8 +108,9 @@ Module.register("compliments_plus", {
 	},
 
 	lastIndexUsed: -1,
-	currentWeatherType: "currentweather",
-	
+	// Set currentweather from module
+	currentWeatherType: "weather",
+
 	getScripts: function() {
 		return ["moment.js", "moment-timezone.js"];
 	},
@@ -163,7 +172,7 @@ Module.register("compliments_plus", {
 	 */
 	complimentArray: function () {
 		var hour = moment().hour();
-		var date = this.config.mockDate ? this.config.mockDate : moment().format("DD-MM-YYYY"); // this is vice versa of origina module
+		var date = this.config.mockDate ? this.config.mockDate : moment().format("DD-MM-YYYY");
 		var compliments;
 
 		if (hour >= this.config.morning && hour < this.config.noon && this.config.compliments.morning) {
@@ -255,7 +264,7 @@ Module.register("compliments_plus", {
 		// create a span to hold it all
 		var compliment = document.createElement("span");
 		// process all the parts of the compliment text
-//		for (var part of parts) {				keep iOS 9 compatibility
+//		for (var part of parts) {							keep iOS 9 compatibility
 		for (var i = 0; i < parts.length; i++) {
             part = parts[i];
 			// create a text element for each part
@@ -265,7 +274,7 @@ Module.register("compliments_plus", {
 		}
 		// remove the last break
 		compliment.lastElementChild.remove();
-		compliment.innerHTML = complimentText; // make html tags compatible
+		compliment.innerHTML = complimentText;
 		wrapper.appendChild(compliment);
 
 		return wrapper;
