@@ -109,7 +109,15 @@ Module.register("compliments_plus", {
 
 	lastIndexUsed: -1,
 	// Set currentweather from module
-	currentWeatherType: "weather",
+	currentWeatherType: "currentweather",
+
+	getScripts: function() {
+		return ["moment.js", "moment-timezone.js"];
+	},
+
+	getStyles: function () {
+		return ["compliments_plus.css", "font-awesome.css", "weather-icons.css"];
+	},
 	
 	start: function () {
 		Log.info("Starting module: " + this.name);
