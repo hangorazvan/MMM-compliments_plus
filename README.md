@@ -1,5 +1,5 @@
 # compliments_plus
-More day and night compliments with icons for MagicMirror 2
+More day and night compliments with icons, html/css styling and real time functions for MagicMirror 2
 
 <br><img src=https://github.com/hangorazvan/compliments_plus/blob/master/preview1.jpg>
 <br><img src=https://github.com/hangorazvan/compliments_plus/blob/master/preview2.jpg>
