@@ -1,5 +1,8 @@
 # compliments_plus
-More day and night compliments with icons, html/css styling and real time functions for MagicMirror 2
+
+https://github.com/hangorazvan/compliments_plus
+
+More day and night compliments with icons for MagicMirror 2
 
 <br><img src=https://github.com/hangorazvan/compliments_plus/blob/master/preview1.jpg>
 <br><img src=https://github.com/hangorazvan/compliments_plus/blob/master/preview2.jpg>
@@ -24,7 +27,7 @@ For use this one add in config.js and ajust config to your needs
 			fadeSpeed: 4000,
 			random: true,
 			mockDate: null,
-			classes: "thin large pre-line",
+			classes: "compliments_plus thin large pre-line",
 
 	//	the beginning of the period of the day
 
