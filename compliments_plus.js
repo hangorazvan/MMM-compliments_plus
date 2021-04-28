@@ -109,7 +109,7 @@ Module.register("compliments_plus", {
 
 	lastIndexUsed: -1,
 	// Set currentweather from module
-	currentWeatherType: "currentweather",
+	currentWeatherType: "weather, currentweather",
 
 	getScripts: function() {
 		return ["moment.js", "moment-timezone.js"];
@@ -118,7 +118,7 @@ Module.register("compliments_plus", {
 	getStyles: function () {
 		return ["compliments_plus.css", "font-awesome.css", "weather-icons.css"];
 	},
-	
+
 	start: function () {
 		Log.info("Starting module: " + this.name);
 
@@ -279,34 +279,14 @@ Module.register("compliments_plus", {
 	},
 
 	// From data currentweather set weather type
-	setCurrentWeatherType: function (data) {
-		var weatherIconTable = {
-			"01d": "day_sunny",
-			"02d": "day_cloudy",
-			"03d": "cloudy",
-			"04d": "cloudy_windy",
-			"09d": "showers",
-			"10d": "rain",
-			"11d": "thunderstorm",
-			"13d": "snow",
-			"50d": "fog",
-			"01n": "night_clear",
-			"02n": "night_cloudy",
-			"03n": "night_cloudy",
-			"04n": "night_cloudy",
-			"09n": "night_showers",
-			"10n": "night_rain",
-			"11n": "night_thunderstorm",
-			"13n": "night_snow",
-			"50n": "night_alt_cloudy_windy"
-		};
-		this.currentWeatherType = weatherIconTable[data.weather[0].icon];
+	setCurrentWeatherType: function (type) {
+		this.currentWeatherType = type;
 	},
 
 	// Override notification handler.
 	notificationReceived: function (notification, payload, sender) {
-		if (notification === "CURRENTWEATHER_DATA") {
-			this.setCurrentWeatherType(payload.data);
+		if (notification === "CURRENTWEATHER_TYPE") {
+			this.setCurrentWeatherType(payload.type);
 		}
 	}
 });
