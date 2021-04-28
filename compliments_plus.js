@@ -109,7 +109,7 @@ Module.register("compliments_plus", {
 
 	lastIndexUsed: -1,
 	// Set currentweather from module
-	currentWeatherType: "weather, currentweather",
+	currentWeatherType: "weather",
 
 	getScripts: function() {
 		return ["moment.js", "moment-timezone.js"];
