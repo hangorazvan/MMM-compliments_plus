@@ -7,7 +7,7 @@ More day and night compliments with icons for MagicMirror 2
 <br><img src=https://github.com/hangorazvan/compliments_plus/blob/master/preview1.jpg>
 <br><img src=https://github.com/hangorazvan/compliments_plus/blob/master/preview2.jpg>
 
-Do not make modification and do not replace the default, just add <i>disable: true</i> in config.js and use this one as 3rd party,
+Do not make modification and do not replace the default, just add <i>disabled: true</i> in config.js and use this one as 3rd party,
 
 	{
 		module: "compliments",
