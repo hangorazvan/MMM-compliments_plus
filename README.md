@@ -3,6 +3,7 @@
 https://github.com/hangorazvan/compliments_plus
 
 More day and night compliments with icons for MagicMirror 2
+<br>This module is no longer maintained, will not have any improvements or bug fixes.
 
 <br><img src=https://github.com/hangorazvan/compliments_plus/blob/master/preview1.jpg>
 <br><img src=https://github.com/hangorazvan/compliments_plus/blob/master/preview2.jpg>
