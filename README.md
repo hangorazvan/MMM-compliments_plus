@@ -71,23 +71,23 @@ For use this one add in config.js and ajust config to your needs
 				"cloudy" : [
 					"<i class=\"wi wi-cloudy\"></i> Cloudy"
 				],
-				"day-cloudy_windy" : [
-					"<i class=\"wi wi-day-cloudy-windy\"></i> Cloudy windy"
+				"cloudy_windy" : [
+					"<i class=\"wi wi-cloudy-windy\"></i> Cloudy windy"
 				],
-				"day-showers" : [
-					"<i class=\"wi wi-day-showers\"></i> Rain shower"
+				"showers" : [
+					"<i class=\"wi wi-showers\"></i> Rain shower"
 				],
-				"day-rain" : [
-					"<i class=\"wi wi-day-rain\"></i> Raining"
+				"rain" : [
+					"<i class=\"wi wi-rain\"></i> Raining"
 				],
-				"day-thunderstorm" : [
-					"<i class=\"wi wi-day-thunderstorm\"></i> Thunderstorm"
+				"thunderstorm" : [
+					"<i class=\"wi wi-thunderstorm\"></i> Thunderstorm"
 				],
-				"day-snow" : [
-					"<i class=\"wi wi-day-snow\"></i> Snowing"
+				"snow" : [
+					"<i class=\"wi wi-snow\"></i> Snowing"
 				],
-				"day-fog" : [
-					"<i class=\"wi wi-day-fog\"></i> It's Fog"
+				"fog" : [
+					"<i class=\"wi wi-fog\"></i> It's Fog"
 				],
 				"night_clear" : [
 					"<i class=\"wi wi-night-clear\"></i> Clear night"
